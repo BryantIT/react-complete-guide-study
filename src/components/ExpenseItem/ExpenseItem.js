@@ -4,13 +4,13 @@ import './style.css'
 
 const ExpenseItem = () => {
   return (
-    <Fragment>
+    <div className='expense-item'>
       <div>Date</div>
-      <div>
+      <div className='expense-item-description'>
         <h2>Title</h2>
-        <div>Amount</div>
+        <div className='expense-item-price'>Amount</div>
       </div>
-    </Fragment>
+    </div>
   )
 }
 

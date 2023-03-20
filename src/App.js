@@ -1,13 +1,12 @@
-import logo from './logo.svg';
+import React from 'react'
+// components
+import ExpenseItem from './components/ExpenseItem/ExpenseItem'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello World</h1>
-        <p>This is visible</p>
-      </header>
+      <ExpenseItem />
     </div>
   );
 }

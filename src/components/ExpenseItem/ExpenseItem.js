@@ -3,12 +3,17 @@ import React, { Fragment } from 'react'
 import './style.css'
 
 const ExpenseItem = () => {
+  const newDate = new Date(2021, 2, 28)
+  const expenseDate = newDate.toString()
+  const expenseTitle = 'Car Insurance'
+  const expenseAmount = 294.67
+
   return (
     <div className='expense-item'>
-      <div>Date</div>
+      <div>{expenseDate}</div>
       <div className='expense-item-description'>
-        <h2>Title</h2>
-        <div className='expense-item-price'>Amount</div>
+        <h2>{expenseTitle}</h2>
+        <div className='expense-item-price'>${expenseAmount}</div>
       </div>
     </div>
   )

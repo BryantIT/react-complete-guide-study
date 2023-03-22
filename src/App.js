@@ -1,6 +1,7 @@
 import React from 'react'
 // components
-import ExpenseItem from './components/ExpenseItem/ExpenseItem'
+import Expenses from './components/Expenses/Expenses'
+// style
 import './App.css'
 
 function App() {
@@ -32,11 +33,7 @@ function App() {
   ]
   return (
     <div className='App'>
-    {
-      expenses.map((expense) => 
-        <ExpenseItem id={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />
-      )
-    }
+      <Expenses expenses={expenses}/>
     </div>
   )
 }

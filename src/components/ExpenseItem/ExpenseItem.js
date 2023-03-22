@@ -1,18 +1,15 @@
 import React, { Fragment } from 'react'
+// components
+import ExpenseDate from '../ExpenseDate/ExpenseDate'
 // css
 import './style.css'
 
 const ExpenseItem = ({ id, title, amount, date }) => {
-  const month = date.toLocaleString('en-US', { month: 'long' })
-  const day = date.toLocaleString('en-US', { day: '2-digit' })
-  const year = date.getFullYear()
-
+  
   return (
     <div className='expense-item' id={id}>
       <div>
-        <div>{month}</div>
-        <div>{day}</div>
-        <div>{year}</div>
+        <ExpenseDate date={date} />
       </div>
       <div className='expense-item-description'>
         <h2>{title}</h2>

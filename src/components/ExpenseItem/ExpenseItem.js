@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react'
 // components
 import ExpenseDate from '../ExpenseDate/ExpenseDate'
 import Card from '../Wrappers/Card'

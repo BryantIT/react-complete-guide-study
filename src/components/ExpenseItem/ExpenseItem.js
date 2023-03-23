@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react'
 // components
 import ExpenseDate from '../ExpenseDate/ExpenseDate'
+import Card from '../Wrappers/Card'
 // css
 import './style.css'
 
 const ExpenseItem = ({ id, title, amount, date }) => {
   
   return (
-    <div className='expense-item' id={id}>
+    <Card className='expense-item' id={id}>
       <div>
         <ExpenseDate date={date} />
       </div>
@@ -15,7 +16,7 @@ const ExpenseItem = ({ id, title, amount, date }) => {
         <h2>{title}</h2>
         <div className='expense-item-price'>${amount}</div>
       </div>
-    </div>
+    </Card>
   )
 }
 

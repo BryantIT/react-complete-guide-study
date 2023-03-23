@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react'
 // components
 import ExpenseItem from '../ExpenseItem/ExpenseItem'
+import Card from '../Wrappers/Card'
 // css
 import './style.css'
 
 const Expenses = ({ expenses }) => {
 
   return (
-    <div className='expenses'>
+    <Card className='expenses'>
       {expenses.map((expense) => (
         <ExpenseItem
           id={expense.id}
@@ -16,7 +17,7 @@ const Expenses = ({ expenses }) => {
           date={expense.date}
         />
       ))}
-    </div>
+    </Card>
   )
 }
 

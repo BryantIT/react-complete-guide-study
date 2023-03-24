@@ -1,7 +1,7 @@
 // css
 import './style.css'
 
-const NewExpense = () => {
+const ExpenseForm = () => {
 
   return (
     <div className='new-expense'>
@@ -12,4 +12,4 @@ const NewExpense = () => {
   )
 }
 
-export default NewExpense
+export default ExpenseForm

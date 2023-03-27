@@ -1,5 +1,6 @@
 // components
 import Expenses from './components/Expenses/Expenses'
+import NewExpense from './components/NewExpense/NewExpense'
 // style
 import './App.css'
 
@@ -32,7 +33,8 @@ function App() {
   ]
   return (
     <div className='App'>
-      <Expenses expenses={expenses}/>
+      <NewExpense />
+      <Expenses expenses={expenses} />
     </div>
   )
 }

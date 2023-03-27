@@ -4,41 +4,45 @@ import './style.css'
 
 const ExpenseForm = () => {
   // States
-  const [title, setTitle] = useState('')
-  const [amount, setAmount] = useState('')
-  const [date, setDate] = useState('')
+  const [userInput, setUserInput] = useState({
+    title: '',
+    amount: '',
+    date: ''
+  })
 
-  const titleChangeHandler = (e) => {
-    setTitle(e.target.value)
-  }
-  
-  const amountChangeHandler = (e) => {
-    setAmount(e.target.value)
+  const changeHandler = (e) => {
+    const value = e.target.value
+    const label = e.target.id
+
+    setUserInput((prevState) => {
+      return {...prevState, [label]: e.target.value}
+    })
   }
 
-  const dateChangeHandler = (e) => {
-    setDate(e.target.value)
+  const submitHandler = (e) => {
+    e.preventDefault()
+    console.log(userInput)
   }
 
   return (
     <div className='new-expense'>
-      <form>
+      <form onSubmit={submitHandler}>
         <div className='new-expense-controls'>
           <div className='new-expense-control'>
             <label>Title</label>
-            <input type='text' onChange={titleChangeHandler} />
+            <input type='text' id='title' onChange={changeHandler} />
           </div>
           <div className='new-expense-control'>
             <label>Amount</label>
-            <input type='number' min='0.01' step='0.01' onChange={amountChangeHandler} />
+            <input type='number' id='amount' min='0.01' step='0.01' onChange={changeHandler} />
           </div>
           <div className='new-expense-control'>
             <label>Date</label>
-            <input type='date' min='2019-01-01' max='2024-12-31' onChange={dateChangeHandler} />
+            <input type='date' id='date' min='2019-01-01' max='2024-12-31' onChange={changeHandler} />
           </div>
         </div>
         <div className='new-expense-actions'>
-          <button type='sumbit'>Add Expense</button>
+          <button type='submit'>Add Expense</button>
         </div>
       </form>
     </div>

@@ -15,8 +15,8 @@ const Expenses = ({ expenses }) => {
 
   return (
     <Fragment>
-    <ExpenseFilter  getSelectedYear={getSelectedYear}/>
       <Card className='expenses'>
+      <ExpenseFilter  getSelectedYear={getSelectedYear}/>
       {expenses.map((expense) => (
         <ExpenseItem
           expense={expense}

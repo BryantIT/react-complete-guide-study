@@ -5,17 +5,29 @@ import Card from '../Wrappers/Card'
 // css
 import './style.css'
 
-const ExpenseFilter = ({ expense }) => {
-  
+const ExpenseFilter = ({ getSelectedYear }) => {
+  const [selectedYear, setSelectedYear] = useState()
+  const yearList = [2019, 2020, 2021, 2022]
+
+  const handleChange = (e) => {
+    const year = e.target.value
+    if (year === 'default') {
+      return
+    }
+    getSelectedYear(year)
+  }
+
   return (
     <div className='expenses-filter'>
-      <div className='expenses-filter--control'>
+      <div className='expenses-filter-control'>
         <label>Filter by year</label>
-        <select>
-          <option value='2022'>2022</option>
-          <option value='2021'>2021</option>
-          <option value='2020'>2020</option>
-          <option value='2019'>2019</option>
+        <select onChange={handleChange}>
+          <option value='default' selected>YEAR</option>
+          {
+            yearList.map(year => (
+              <option value={`${year}`}>{year}</option>
+            ))
+          }
         </select>
       </div>
     </div>

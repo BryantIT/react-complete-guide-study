@@ -2,9 +2,10 @@
 import './style.css'
 
 const ExpenseDate = ({ date }) => {
-  const month = date.toLocaleString('en-US', { month: 'long' })
-  const day = date.toLocaleString('en-US', { day: '2-digit' })
-  const year = date.getFullYear()
+  const formatedDate = new Date(date)
+  const month = formatedDate.toLocaleString('en-US', { month: 'long' })
+  const day = formatedDate.toLocaleString('en-US', { day: '2-digit' })
+  const year = formatedDate.getFullYear()
 
   return (
     <div className='expense-date'>

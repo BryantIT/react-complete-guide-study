@@ -22,10 +22,10 @@ const ExpenseForm = ({ onSave }) => {
   const submitHandler = (e) => {
     e.preventDefault()
     const submittedData = userInput
+    onSave(submittedData)
     setUserInput(() => {
       return { title: '', amount: '', date: '' }
     })
-    onSave(submittedData)
   }
 
   return (

@@ -6,25 +6,16 @@ import Card from '../Wrappers/Card'
 import './style.css'
 
 const ExpenseItem = ({ expense }) => {
-  const [title, setTitle] = useState(expense.title)
-  const [id, setID] = useState(expense.id)
-  const [date, setDate] = useState(expense.date)
-  const [amount, setAmount] = useState(expense.amount)
-
-  const clickHandler = () => {
-    setTitle('updated')
-  }
   
   return (
-    <Card className='expense-item' key={id}>
+    <Card className='expense-item' key={expense.id}>
       <div>
-        <ExpenseDate date={date} />
+        <ExpenseDate date={expense.date} />
       </div>
       <div className='expense-item-description'>
-        <h2>{title}</h2>
-        <div className='expense-item-price'>${amount}</div>
+        <h2>{expense.title}</h2>
+        <div className='expense-item-price'>${expense.amount}</div>
       </div>
-      <button onClick={clickHandler}>Change Title</button>
     </Card>
   )
 }

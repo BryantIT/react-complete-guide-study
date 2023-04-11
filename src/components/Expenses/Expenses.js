@@ -8,17 +8,25 @@ import './style.css'
 
 const Expenses = ({ expenses }) => {
   const [selectedYear, setSelectedYear] = useState()
+  const [displayedExpenses, setDisplayedExpenses] = useState(expenses)
 
-  const getSelectedYear = (year) => {
-    setSelectedYear(year)
+
+  const filterExpenses = (year) => {
+    if (isNaN(year)) {
+      setDisplayedExpenses(expenses)
+      return
+    }
+    const filtered = expenses.filter(expense => expense.date.getFullYear() === year)
+    setDisplayedExpenses(filtered)
   }
 
   return (
     <Fragment>
       <Card className='expenses'>
-      <ExpenseFilter  getSelectedYear={getSelectedYear}/>
-      {expenses.map((expense) => (
+      <ExpenseFilter  filterExpenses={filterExpenses}/>
+      {displayedExpenses.map((expense) => (
         <ExpenseItem
+          key={expense.id}
           expense={expense}
         />
       ))}

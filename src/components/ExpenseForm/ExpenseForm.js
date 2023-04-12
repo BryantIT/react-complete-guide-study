@@ -24,6 +24,13 @@ const ExpenseForm = ({ onSave }) => {
     setShouldShowForm(true)
   }
 
+  const cancelHandler = () => {
+    setUserInput(() => {
+      return { title: '', amount: '', date: '' }
+    })
+    setShouldShowForm(false)
+  }
+
   const submitHandler = (e) => {
     e.preventDefault()
     const submittedData = userInput
@@ -71,11 +78,14 @@ const ExpenseForm = ({ onSave }) => {
             </div>
           </div>
           <div className='new-expense-actions'>
+            <button type='button' onClick={cancelHandler}>Cancel</button>
             <button type='submit'>Add Expense</button>
           </div>
         </form>
       ) : (
-        <button type='button' onClick={addFormHandler}>Add New Expense</button>
+        <button type='button' onClick={addFormHandler}>
+          Add New Expense
+        </button>
       )}
     </div>
   )

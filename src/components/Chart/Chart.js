@@ -3,14 +3,17 @@ import './style.css'
 // components
 import ChartBars from '../ChartBars/ChartBars'
 
-const Chart = ({ data }) => {
+const Chart = ({ chartData }) => {
+  const values = chartData.map(point => point.value)
+  const max = Math.max(...values)
+
   return (
     <div className='chart'>
-      {data.map((item) => (
+      {chartData.map((item) => (
         <ChartBars
           key={item.label}
           value={item.value}
-          maxValue={null}
+          maxValue={max}
           label={item.label}
         />
       ))}

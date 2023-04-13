@@ -3,6 +3,7 @@ import React, { Fragment, useState } from 'react'
 import ExpenseItem from '../ExpenseItem/ExpenseItem'
 import Card from '../Wrappers/Card'
 import ExpenseFilter from '../ExpenseFilter/ExpenseFilter'
+import ExpensesChart from '../ExpensesChart/ExpensesChart'
 // css
 import './style.css'
 
@@ -31,6 +32,7 @@ const Expenses = ({ expenses }) => {
     <Fragment>
       <Card className='expenses'>
         <ExpenseFilter filterExpenses={filterExpenses} />
+        <ExpensesChart displayedExpenses={displayedExpenses}/>
         {shouldDisplayList ? (
           displayedExpenses.map((expense) => (
             <ExpenseItem key={expense.id} expense={expense} />
